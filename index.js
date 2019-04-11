@@ -49,7 +49,25 @@ class ADODB {
 
     return this.proxy.exec('execute', params);
   }
+  
+  /**
+   * @method executeTrans
+   * @param {string} sql
+   * @param {string} cmd
+   * @returns {Promise}
+   */
+  executeTrans(sql, cmd) {
+    debug('cmd:', 'executeTrans');
+    debug('sql:', sql);
 
+    const connection = this.connection;
+    const params = { connection, sql };
+
+    debug('cmd:', cmd);
+    params.cmd = cmd;
+   
+    return this.proxy.exec('executeTrans', params);
+  }
   /**
    * @method query
    * @param {string} sql
