@@ -52,7 +52,7 @@ class ADODB {
   
   /**
    * @method executeTrans
-   * @param {string} sql
+   * @param {string} [sql]
    * @param {string} cmd
    * @returns {Promise}
    */
